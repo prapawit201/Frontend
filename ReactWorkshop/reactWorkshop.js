@@ -1,3 +1,4 @@
+//! Class Lecture in morning
 function sayHi(name = "World") {
     console.log(sayHi)
 }
@@ -12,6 +13,8 @@ const people = [
 ] 
 console.log(people)
 
+
+//!Class Lab - how to train JS before React 
 // Persons
 const persons = [
     {
@@ -32,8 +35,8 @@ const persons = [
     },
   ]
   
-  // void function
-  // method can't return
+  //! void function
+  //* method can't return
   
   // const displayName = (person) => {  
   // console.log(`${person.name} ${person.age}`)
@@ -53,13 +56,13 @@ const persons = [
   // function getName(person){
   //   return person.name
   // }
-  // //or arrow function
+  //*or arrow function
   // const getName2 = (person) =>{
   //   return person.name
   // }
-  // //or No function logic
+  //* or No function logic
   // const getName3 = (person) => person.name
-  // //destructering
+  //* destructering
   // const getName4 = ({name}) =>{
   //  if(name == 'BasEiei'){
   //   return 'supawit'
@@ -74,7 +77,7 @@ const persons = [
   
   //-------------------------------------------
   
-  //map function
+  //*map function
   // const names = persons.map((person) => {
   //   return person.name
   // })
@@ -87,7 +90,7 @@ const persons = [
     
   //------------------------------------------
   
-  // Products
+  //! Products
   const products = [
     {
       name: "Chocolate",
@@ -110,7 +113,8 @@ const persons = [
       price: 2000000.00
     }
   ]
-  // //Filter function
+  
+  //*Filter function
   
   // const foods =  products.filter((product) => {
   //     if(product.category == 'Food'){
