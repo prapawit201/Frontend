@@ -46,10 +46,29 @@ class ProductList extends React.Component {  //!copy ความสามาร
       name: 'Bas'
     }
   }
+  // componentDidMount = () => { //!เรียกเมื่อใช้เมื่อทุก component สร้างเสร็จเเล้ว
+  //   this.set({ //*เป็นการเปลี่ยน state จาก Bas กลายเป็น Tae
+  //     user: {
+  //       name:  "Tae"
+  //     }
+  //   })
+  // } 
+
+  componentDidMount =()=> {
+    setTimeout(() => {
+      this.setState({
+        user: {
+          name:  "Tae"
+        }
+      })
+    }, 3000);
+  }
+
   render() { //*ฟังชั่น
     return (
-
-      <div>   <Title name="Babe :)" />
+      
+      <div>   <Title name={this.state.user.name} /> <hr/>
+              <Title name="Babe :)" />
               <Title name ={10} /> <hr/>
               <Title name ="New Product"/>
               <ProductCard item = {this.state.products[0]}/>
