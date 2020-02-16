@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios' //* import axios 
+
 const Title = (props) => { //! a.k.a dump component
   return (
     <h1>Product List {props.name}</h1>
@@ -54,19 +56,27 @@ class ProductList extends React.Component {  //!copy ความสามาร
   //   })
   // } 
 
-  componentDidMount =()=> {
-    setTimeout(() => {
-      this.setState({
-        user: {
-          name:  "Tae"
-        }
-      })
-    }, 3000);
+  // componentDidMount =()=> { //*สร้าง lift cycle time-out ของข้อมูล
+  //   setTimeout(() => {
+  //     this.setState({
+  //       user: {
+  //         name:  "Tae"
+  //       }
+  //     })
+  //   }, 3000);
+  // }
+
+  componentDidMount = () => { //? How to connect API
+    axios.get( //!ให้ axios ดึงข้อมูลมาจาก  postman(API) เเล้วตอบกลับมายังหน้าเว็บของเรา
+      'https://dry-scrubland-02499.herokuapp.com/api/v1/products'
+    ).then((response) => {
+      console.log('response data',response) 
+    }
+    )
   }
 
   render() { //*ฟังชั่น
     return (
-      
       <div>   <Title name={this.state.user.name} /> <hr/>
               <Title name="Babe :)" />
               <Title name ={10} /> <hr/>
