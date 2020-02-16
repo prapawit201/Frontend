@@ -37,5 +37,13 @@
   }
 }
 .product-card {
-  background: pink;
+  background:purple;
+  color: white;
+  border: black 1px solid;
+  width: 300px;
+  display: inline-block;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 4px;
+  font-family: 'Fredoka One', cursive;
 }

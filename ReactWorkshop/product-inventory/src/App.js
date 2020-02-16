@@ -10,7 +10,8 @@ const ProductCard = (props) => {
   return (
     <div class= "product-card">
       {props.item.name}
-      {props.item.price}
+      {props.item.price}<br/> <br/>
+      <center><button type="button" class="btn btn-info">Menu</button></center>
     </div>
   )
 }
@@ -61,8 +62,10 @@ class ProductList extends React.Component {  //!copy ความสามาร
               //     {product.price},
               //     {product.description}
               // </div>
-            )
+            
+              )
           )}
+          
         </div>
         <br></br>
        
