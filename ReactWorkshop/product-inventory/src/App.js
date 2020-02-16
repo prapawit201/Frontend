@@ -10,11 +10,15 @@ const Title = (props) => { //! a.k.a dump component
 
 const ProductCard = (props) => {
   return (
-    <div class= "product-card">
-      {props.item.name}
-      {props.item.price}<br/> <br/>
-      <center><button type="button" class="btn btn-info">Menu</button></center>
-    </div>
+      <div class= "product-card">
+        {/* <span className=""></span> */}
+        <div><center><img src = {props.item.product_image} width="400px" /></center></div>
+        <span> {props.item.product_name}
+        {props.item.product_detail}
+        {props.item.price}<br/> <br/>
+        <center><button type="button" class="btn btn-info">Menu</button></center>
+        </span>
+      </div>
   )
 }
 
@@ -48,6 +52,7 @@ class ProductList extends React.Component {  //!copy ความสามาร
       name: 'Bas'
     }
   }
+
   // componentDidMount = () => { //!เรียกเมื่อใช้เมื่อทุก component สร้างเสร็จเเล้ว
   //   this.set({ //*เป็นการเปลี่ยน state จาก Bas กลายเป็น Tae
   //     user: {
@@ -70,8 +75,12 @@ class ProductList extends React.Component {  //!copy ความสามาร
     axios.get( //!ให้ axios ดึงข้อมูลมาจาก  postman(API) เเล้วตอบกลับมายังหน้าเว็บของเรา
       'https://dry-scrubland-02499.herokuapp.com/api/v1/products'
     ).then((response) => {
-      console.log('response data',response) 
-    }
+      // console.log('response data',response) 
+      this.setState({
+        products: response.data
+      })
+      }
+    
     )
   }
 
@@ -98,7 +107,7 @@ class ProductList extends React.Component {  //!copy ความสามาร
         </div>
         <br></br>
        
-          <table border="1" class="table table-striped">
+          {/* <table border="1" class="table table-striped">
             <tr>
               <td>Name</td>
               <td>Price</td>
@@ -113,7 +122,7 @@ class ProductList extends React.Component {  //!copy ความสามาร
                 </tr>
               )
             )}
-          </table>
+          </table> */}
         
       </div>
     )
