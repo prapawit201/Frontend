@@ -1,5 +1,21 @@
 import React from 'react';
+import './App.css';
+const Title = (props) => { //! a.k.a dump component
+  return (
+    <h1>Product List {props.name}</h1>
+  )
+}
 
+const ProductCard = (props) => {
+  return (
+    <div class= "product-card">
+      {props.item.name}
+      {props.item.price}
+    </div>
+  )
+}
+
+//! a.k.a smart component
 class ProductList extends React.Component {  //!copy ความสามารถมาจาก react เลยต้อง extends
 
   state = { //*สร้าง State
@@ -31,38 +47,42 @@ class ProductList extends React.Component {  //!copy ความสามาร
   }
   render() { //*ฟังชั่น
     return (
-      <div><h2>Product List</h2> <hr />
-        <h3>{this.state.user.name}</h3>
+
+      <div>   <Title name="Babe :)" />
+              <Title name ={10} /> <hr/>
+              <Title name ="New Product"/>
+              <ProductCard item = {this.state.products[0]}/>
         <div>
           {this.state.products.map(
             (product) => (
-              <div>
-                {product.name},
-                  {product.price},
-                  {product.description}
-              </div>
+              <ProductCard item = {product} />
+              // <div>
+              //   {product.name},
+              //     {product.price},
+              //     {product.description}
+              // </div>
             )
           )}
         </div>
         <br></br>
-        <center>
-        <table border="1" class="table table-striped">
-          <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>description</td>
-          </tr>
-          {this.state.products.map(
-            (product) => (
-              <tr>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.description}</td>
-              </tr>
-            )
-          )}
-        </table>
-        </center>
+       
+          <table border="1" class="table table-striped">
+            <tr>
+              <td>Name</td>
+              <td>Price</td>
+              <td>description</td>
+            </tr>
+            {this.state.products.map(
+              (product) => (
+                <tr>
+                  <td>{product.name}</td>
+                  <td>{product.price}</td>
+                  <td>{product.description}</td>
+                </tr>
+              )
+            )}
+          </table>
+        
       </div>
     )
   }
