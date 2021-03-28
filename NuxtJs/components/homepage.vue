@@ -1,5 +1,6 @@
 <template>
-<b-card
+<div class="test">
+    <b-card
     title="Card Title"
     img-src="https://picsum.photos/600/300/?image=25"
     img-alt="Image"
@@ -13,6 +14,8 @@
     </b-card-text>
      <b-button variant="outline-success" @click="nextPage()">Success</b-button>
   </b-card>
+</div>
+
 </template>
 
 <script>
