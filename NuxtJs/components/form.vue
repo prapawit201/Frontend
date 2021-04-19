@@ -10,7 +10,9 @@
         class="mb-2 card-form"
       >
         <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-          <center><b-avatar size="8rem" style="margin-bottom:2rem"></b-avatar></center>
+          <center>
+            <b-avatar size="8rem" style="margin-bottom:2rem"></b-avatar>
+          </center>
           <b-form-group
             id="input-group-2"
             label="Your Name:"
@@ -62,7 +64,11 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      // alert(JSON.stringify(this.form));
+      let result = this.$axios.post("http://localhost:5000/account", 
+        {...this.form}
+      );
+      console.log(this.form);
     },
     onReset(event) {
       event.preventDefault();
@@ -79,7 +85,7 @@ export default {
 };
 </script>
 <style>
-.form{
+.form {
   /* max-width: 100%; */
   padding-top: 7rem;
 }
