@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import EntCompare from '@/components/EntCompare'
+import HelloWorld from '@/pages/HelloWorld'
+import EntCompare from '@/pages/EntCompare'
 Vue.use(Router)
 
 export default new Router({
